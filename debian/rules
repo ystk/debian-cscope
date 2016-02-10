@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+override_dh_auto_install:
+	# Disabled. See debian/*.install files
+
+override_dh_clean:
+	dh_clean
+	find -type d -name CVS | xargs --no-run-if-empty rm -rf
+%:
+	dh $@
+
+# End of file
+
